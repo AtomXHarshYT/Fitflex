@@ -1,23 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const journeyButton = document.querySelector('.journey-button');
-  const begin_Gym = document.querySelector('#begin-button');
-  const inter_Gym = document.querySelector('#inter-button');
-  const weight_Gain = document.querySelector('#weight-gain-button');
-  const weight_Loss = document.querySelector('#weight-loss-button');
+  
 
-  begin_Gym.addEventListener('click', function () {
-    window.location.href = 'begin_Gym.html';
-  });
-  inter_Gym.addEventListener('click', function () {
-    window.location.href = 'inter_Gym.html';
-  });
-  weight_Gain.addEventListener('click', function () {
-    window.location.href = 'weight_Gain.html';
-  });
-  weight_Loss.addEventListener('click', function () {
-    window.location.href = 'weight_Loss.html';
-  });
-
+  // Function to get query parameters from the URL
   function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     return {
@@ -26,30 +10,17 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   }
 
+  // Retrieve user details from the URL
   const { name, expiry } = getQueryParams();
 
+  // Update the content on the page
   if (name && expiry) {
     document.getElementById("welcomeMessage").textContent = `Welcome, ${name}!`;
     document.getElementById("expiryDetails").textContent = `Subscription Expiry: ${expiry}.`;
   } else {
+    // Fallback if details are missing
     document.getElementById("welcomeMessage").textContent = "Welcome to FitFlex!";
     document.getElementById("expiryDetails").textContent = "Log in to view your account details.";
-  }
-
-  journeyButton.addEventListener('click', function () {
-    if (window.innerWidth <= 768) {
-      document.body.classList.add('show-overlay');
-    }
-  });
-
-  document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('show-overlay')) {
-      closePopup();
-    }
-  });
-
-  function closePopup() {
-    document.body.classList.remove('show-overlay');
   }
 
   const contactButton = document.querySelector('.contact-button');
@@ -81,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.remove('show-overlay');
   }
 
+  // Close pop-up when clicking outside
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('show-overlay')) {
       closePopup();
