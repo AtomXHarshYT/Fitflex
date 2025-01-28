@@ -63,3 +63,15 @@
         height: auto;
     }
   }
+
+  /* Media query for mobile devices */
+@media (max-width: 768px) {
+  .description-section {
+      justify-content: flex-start; /* Align content to the left */
+      padding-left: 20px; /* Add some padding on the left */
+  }
+  .content {
+      text-align: left; /* Ensure text is left-aligned on mobile */
+      margin: 0; /* Remove auto margin to allow full width */
+  }
+}

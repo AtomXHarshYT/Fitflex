@@ -192,8 +192,9 @@ header {
 }
 
 .description-section {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally on larger screens */
   padding: 40px;
-  text-align: center;
   background-color: #1a1a1a; /* Dark background for the description */
   color: #ffffff; /* White text for contrast */
 }
@@ -202,6 +203,8 @@ header {
   opacity: 0; /* Start hidden */
   transform: translateX(-100%); /* Start off-screen to the left */
   transition: opacity 1s ease-out, transform 1s ease-out; /* Slower transition duration */
+  max-width: 600px; /* Set a max width for the content */
+  text-align: center; /* Center align text on larger screens */
 }
 
 .content.is-visible {
