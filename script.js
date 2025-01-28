@@ -59,4 +59,24 @@ document.addEventListener('DOMContentLoaded', function () {
       closeContactPopup();
     }
   });
+
+  const content = document.querySelector('.content');
+  const scrollButton = document.querySelector('.scroll-down-button');
+  const nextSection = document.getElementById('nextSection');
+
+  // Fade-in effect with horizontal slide for inner content
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              content.classList.add('is-visible');
+          }
+      });
+  });
+
+  observer.observe(content);
+
+  // Scroll down functionality
+  scrollButton.addEventListener('click', function () {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+  });
 });

@@ -191,6 +191,46 @@ header {
   height: auto;
 }
 
+.description-section {
+  padding: 40px;
+  text-align: center;
+  background-color: #1a1a1a; /* Dark background for the description */
+  color: #ffffff; /* White text for contrast */
+}
+
+.content {
+  opacity: 0; /* Start hidden */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Slower transition duration */
+}
+
+.content.is-visible {
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Slide in to the original position */
+}
+
+.scroll-down-button {
+  margin-top: 20px;
+  padding: 12px 24px; /* Increased padding for a larger button */
+  background-color: #ff6f61; /* Bright button color */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+  font-size: 16px; /* Increased font size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+}
+
+.scroll-down-button:hover {
+  background-color: #e05a50; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.scroll-down-button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+}
+
 footer {
   background-color: #282A36;
   /* Dark background for the footer */
