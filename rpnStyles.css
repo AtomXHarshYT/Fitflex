@@ -71,7 +71,7 @@
       padding-left: 20px; /* Add some padding on the left */
   }
   .content {
-      text-align: left; /* Ensure text is left-aligned on mobile */
+      text-align: center; /* Ensure text is left-aligned on mobile */
       margin: 0; /* Remove auto margin to allow full width */
   }
 }
